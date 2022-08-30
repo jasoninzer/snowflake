@@ -9,14 +9,14 @@ Author: Jason Inzer
 create schema reference_data;
 
 create table reference_data.country (
-	iso_2_code char(2) primary key not null,
-	iso_3_code char(3),
-	iso_numeric_code number,
+	country_iso2 char(2) primary key not null,
+	country_iso3 char(3),
+	country_iso_numeric number,
 	country_name varchar(60) not null,
 	created_at timestamp_ntz default sysdate()
 	);
 
-insert into country(iso_2_code,iso_3_code,iso_numeric_code,country_name) values
+insert into country(country_iso2,country_iso3,country_iso_numeric,country_name) values
 ('AF','AFG',4,'Afghanistan'),
 ('AX','ALA',248,'Aland Islands'),
 ('AL','ALB',8,'Albania'),
