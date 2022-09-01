@@ -1,9 +1,10 @@
 /*
 
 Filename: 	iso_country.sql
-Description: 	A lookup table to store the ISO 3166 country codes in Snowflake.
+Purpose: 	Create and populate a lookup table with the ISO 3166 country codes.
 Data Source:	https://www.iso.org/iso-3166-country-codes.html
 Notes:		--
+Database: 	Snowflake
 Author: 	Jason Inzer
 
 */
