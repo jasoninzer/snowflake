@@ -1,9 +1,10 @@
 /*
 
 Filename: 	iso_currency.sql
-Description: 	A lookup table to store the ISO 4217 currency codes in Snowflake.
+Purpose: 	Create and populate a lookup table with the ISO 4217 currency codes.
 Data Source:	https://www.iso.org/iso-4217-currency-codes.html
 Notes:		--
+Database:	Snowflake
 Author: 	Jason Inzer
 
 */
