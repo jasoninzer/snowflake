@@ -14,7 +14,7 @@ create schema reference_data;
 create table reference_data.currency (
 	currency_iso char(3) primary key not null,
 	currency_iso_numeric number,
-	currency_name varchar(60) not null,
+	currency_name varchar(100) not null,
 	minor_unit number,
 	created_at timestamp_ntz default sysdate()
 	);
