@@ -15,7 +15,7 @@ create table reference_data.country (
 	country_iso2 char(2) primary key not null,
 	country_iso3 char(3),
 	country_iso_numeric number,
-	country_name varchar(60) not null,
+	country_name varchar(100) not null,
 	created_at timestamp_ntz default sysdate()
 	);
 
