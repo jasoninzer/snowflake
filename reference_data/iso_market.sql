@@ -9,4 +9,5 @@ Author:       Jason Inzer
 
 */
 
+create schema reference_data;
 
