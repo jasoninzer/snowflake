@@ -9,9 +9,9 @@ Author: 	Jason Inzer
 
 */
 
-create schema reference_data;
+create schema if not exists reference;
 
-create table reference_data.currency (
+create table reference.currency (
 	currency_iso char(3) primary key not null,
 	currency_iso_numeric number,
 	currency_name varchar(100) not null,
@@ -19,7 +19,7 @@ create table reference_data.currency (
 	created_at timestamp_ntz default sysdate()
 	);
 
-insert into currency(currency_iso,currency_iso_numeric,currency_name,minor_unit) values
+insert into reference.currency(currency_iso,currency_iso_numeric,currency_name,minor_unit) values
 ('AFN','971','Afghani',2),
 ('DZD','012','Algerian Dinar',2),
 ('ARS','032','Argentine Peso',2),
