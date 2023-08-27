@@ -9,5 +9,17 @@ Author:       Jason Inzer
 
 */
 
-create schema reference_data;
+create or replace table reference.mic (
+	mic char(4) not null,
+	operating_mic char(4),
+	mic_type char(4),
+	market_name varchar(255),
+	country char(2),
+	city varchar(255),
+	website varchar(255),
+	acronym varchar(40),
+	is_active boolean,
+	created_at timestamp_ntz default sysdate()
+);
+
 
