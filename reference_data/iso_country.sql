@@ -9,9 +9,9 @@ Author: 	Jason Inzer
 
 */
 
-create schema reference_data;
+create schema if not exists reference;
 
-create table reference_data.country (
+create table reference.country (
 	country_iso2 char(2) primary key not null,
 	country_iso3 char(3),
 	country_iso_numeric number,
@@ -19,7 +19,7 @@ create table reference_data.country (
 	created_at timestamp_ntz default sysdate()
 	);
 
-insert into country(country_iso2,country_iso3,country_iso_numeric,country_name) values
+insert into reference.country(country_iso2,country_iso3,country_iso_numeric,country_name) values
 ('AF','AFG',4,'Afghanistan'),
 ('AX','ALA',248,'Aland Islands'),
 ('AL','ALB',8,'Albania'),
