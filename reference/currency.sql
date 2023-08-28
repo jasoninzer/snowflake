@@ -1,6 +1,6 @@
 /*
 
-Filename: 	iso_currency.sql
+Filename: 	currency.sql
 Purpose: 	Create and populate a lookup table with the ISO 4217 currency codes.
 Data Source:	https://www.iso.org/iso-4217-currency-codes.html
 Notes:		--
