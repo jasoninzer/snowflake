@@ -1,6 +1,6 @@
 /*
 
-Filename: 	iso_country.sql
+Filename: 	country.sql
 Purpose: 	Create and populate a lookup table with the ISO 3166 country codes.
 Data Source:	https://www.iso.org/iso-3166-country-codes.html
 Notes:		--
