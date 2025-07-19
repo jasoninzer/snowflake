@@ -12,7 +12,7 @@ Author:       Jason Inzer
 create schema if not exists reference;
 
 create or replace table reference.market (
-	mic char(4) not null,
+	mic_code char(4) not null,
 	operating_mic char(4),
 	mic_type char(4),
 	market_name varchar(255),
@@ -24,7 +24,7 @@ create or replace table reference.market (
 	created_at timestamp_ntz default sysdate()
 );
 
-insert into reference.market(mic,operating_mic,mic_type,market_name,acronym,country,city,website,is_active)
+insert into reference.market(mic_code,operating_mic,mic_type,market_name,acronym,country,city,website,is_active)
 values
 
 ('3579','3579','OPRT','SSY FUTURES LTD -  FREIGHT SCREEN','','GB','LONDON','WWW.SSYONLINE.COM',TRUE),
