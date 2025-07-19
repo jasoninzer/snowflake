@@ -1,7 +1,7 @@
 /*
 
 Filename: 	asset_class.sql
-Purpose: 	Create and populate a lookup table with common asset classes.
+Purpose: 	Create and populate a reference table with common asset classes.
 Data Source:	proprietary
 Notes:		--
 Database: 	Snowflake
