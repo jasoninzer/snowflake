@@ -1,7 +1,7 @@
 /*
 
 Filename: 	security_type.sql
-Purpose: 	Create and populate a lookup table with common security types.
+Purpose: 	Create and populate a reference table with common security types.
 Data Source:	proprietary
 Notes:		--
 Database: 	Snowflake
