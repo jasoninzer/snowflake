@@ -12,15 +12,15 @@ Author: 	Jason Inzer
 create schema if not exists reference;
 
 create table reference.country (
-    iso_alpha_2 CHAR(2) PRIMARY KEY NOT NULL,
-    iso_alpha_3 CHAR(3) NOT NULL UNIQUE,
-    iso_numeric CHAR(3) UNIQUE,
-    name VARCHAR(100) NOT NULL,
+    country_code_alpha2 CHAR(2) PRIMARY KEY NOT NULL,
+    country_code_alpha3 CHAR(3) NOT NULL UNIQUE,
+    country_code_numeric CHAR(3) UNIQUE,
+    country_name VARCHAR(100) NOT NULL,
     is_active BOOLEAN DEFAULT TRUE,                -- Optional: for discontinued codes
     created_at TIMESTAMP_NTZ DEFAULT SYSDATE(),
 );
 
-insert into reference.country(iso_alpha_2,iso_alpha_3,iso_numeric,name) values
+insert into reference.country(country_code_alpha2,country_code_alpha3,country_code_numeric,country_name) values
 ('AF','AFG',4,'Afghanistan'),
 ('AX','ALA',248,'Aland Islands'),
 ('AL','ALB',8,'Albania'),
