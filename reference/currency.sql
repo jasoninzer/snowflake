@@ -15,11 +15,11 @@ create table reference.currency (
 	currency_code_alpha char(3) primary key not null,
 	currency_code_numeric number,
 	currency_name varchar(100) not null,
-	minor_unit number,
+	currency_minor_unit number,
 	created_at timestamp_ntz default sysdate()
 	);
 
-insert into reference.currency(currency_code_alpha,currency_code_numeric,currency_name,minor_unit) values
+insert into reference.currency(currency_code_alpha,currency_code_numeric,currency_name,currency_minor_unit) values
 ('AFN','971','Afghani',2),
 ('DZD','012','Algerian Dinar',2),
 ('ARS','032','Argentine Peso',2),
