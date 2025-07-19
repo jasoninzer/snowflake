@@ -11,7 +11,7 @@ Author: 	Jason Inzer
 
 create schema if not exists reference;
 
-CREATE TABLE reference.security_types (
+CREATE TABLE reference.security_type (
   security_type_code VARCHAR(30) PRIMARY KEY NOT NULL, -- COMMON_STOCK, CORPORATE_BOND, etc.
   security_type_name VARCHAR(60) NOT NULL,
   asset_class_code VARCHAR(20) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE reference.security_types (
 );
 
 -- Insert all security types with their asset class mappings
-INSERT INTO reference.security_types (security_type_code, security_type_name, asset_class_code) VALUES
+INSERT INTO reference.security_type (security_type_code, security_type_name, asset_class_code) VALUES
 
 -- EQUITY Security Types
 ('COMMON_STOCK', 'Common Stock', 'EQUITY'),
