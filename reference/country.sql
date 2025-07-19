@@ -1,7 +1,7 @@
 /*
 
 Filename: 	country.sql
-Purpose: 	Create and populate a lookup table with the ISO 3166 country codes.
+Purpose: 	Create and populate a reference table with the ISO 3166 country codes.
 Data Source:	https://www.iso.org/iso-3166-country-codes.html
 Notes:		--
 Database: 	Snowflake
@@ -12,14 +12,15 @@ Author: 	Jason Inzer
 create schema if not exists reference;
 
 create table reference.country (
-	country_iso2 char(2) primary key not null,
-	country_iso3 char(3),
-	country_iso_numeric number,
-	country_name varchar(100) not null,
-	created_at timestamp_ntz default sysdate()
-	);
+    iso_alpha_2 CHAR(2) PRIMARY KEY NOT NULL,
+    iso_alpha_3 CHAR(3) NOT NULL UNIQUE,
+    iso_numeric CHAR(3) UNIQUE,
+    name VARCHAR(100) NOT NULL,
+    is_active BOOLEAN DEFAULT TRUE,                -- Optional: for discontinued codes
+    created_at TIMESTAMP_NTZ DEFAULT SYSDATE(),
+);
 
-insert into reference.country(country_iso2,country_iso3,country_iso_numeric,country_name) values
+insert into reference.country(iso_alpha_2,iso_alpha_3,iso_numeric,name) values
 ('AF','AFG',4,'Afghanistan'),
 ('AX','ALA',248,'Aland Islands'),
 ('AL','ALB',8,'Albania'),
