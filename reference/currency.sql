@@ -1,7 +1,7 @@
 /*
 
 Filename: 	currency.sql
-Purpose: 	Create and populate a lookup table with the ISO 4217 currency codes.
+Purpose: 	Create and populate a reference table with the ISO 4217 currency codes.
 Data Source:	https://www.iso.org/iso-4217-currency-codes.html
 Notes:		--
 Database:	Snowflake
@@ -12,14 +12,14 @@ Author: 	Jason Inzer
 create schema if not exists reference;
 
 create table reference.currency (
-	currency_iso char(3) primary key not null,
-	currency_iso_numeric number,
+	currency_code_alpha char(3) primary key not null,
+	currency_code_numeric number,
 	currency_name varchar(100) not null,
 	minor_unit number,
 	created_at timestamp_ntz default sysdate()
 	);
 
-insert into reference.currency(currency_iso,currency_iso_numeric,currency_name,minor_unit) values
+insert into reference.currency(currency_code_alpha,currency_code_numeric,currency_name,minor_unit) values
 ('AFN','971','Afghani',2),
 ('DZD','012','Algerian Dinar',2),
 ('ARS','032','Argentine Peso',2),
