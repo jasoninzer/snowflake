@@ -12,7 +12,7 @@ Author: 	Jason Inzer
 create schema if not exists reference;
 
 CREATE TABLE reference.security_types (
-  security_type_code VARCHAR(30) PRIMARY KEY NOT NULL,
+  security_type_code VARCHAR(30) PRIMARY KEY NOT NULL, -- COMMON_STOCK, CORPORATE_BOND, etc.
   security_type_name VARCHAR(60) NOT NULL,
   asset_class_code VARCHAR(20) NOT NULL,
   created_at TIMESTAMP_NTZ DEFAULT SYSDATE(),
