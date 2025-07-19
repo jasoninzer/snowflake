@@ -1,7 +1,7 @@
 /*
 
-Filename: 	asset_class.sql
-Purpose: 	Create and populate a lookup table with common asset classes.
+Filename: 	security_type.sql
+Purpose: 	Create and populate a lookup table with common security types.
 Data Source:	proprietary
 Notes:		--
 Database: 	Snowflake
@@ -11,14 +11,13 @@ Author: 	Jason Inzer
 
 create schema if not exists reference;
 
-create table reference.asset_class (
-  asset_class_id INTEGER AUTOINCREMENT PRIMARY KEY NOT NULL,
-  asset_class_code VARCHAR(50) NOT NULL,           -- EQUITY, FIXED_INCOME, etc.
-  asset_class_name VARCHAR(100) NOT NULL,          -- Equity, Fixed Income, etc.
-  security_type_code VARCHAR(50),                  -- COMMON_STOCK, CORPORATE_BOND, etc.
+create table reference.security_type (
+  security_type_code VARCHAR(30) PRIMARY KEY NOT NULL,                  -- COMMON_STOCK, CORPORATE_BOND, etc.
   security_type_name VARCHAR(100),                 -- Common Stock, Corporate Bond, etc.
-	created_at timestamp_ntz default sysdate()
-	);
+  asset_class_code VARCHAR(20) NOT NULL,           -- EQUITY, FIXED_INCOME, etc.
+  asset_class_name VARCHAR(100) NOT NULL,          -- Equity, Fixed Income, etc.
+  created_at timestamp_ntz default sysdate()
+);
 
 
 INSERT INTO reference.asset_class (asset_class_code, asset_class_name, security_type_code, security_type_name) VALUES
