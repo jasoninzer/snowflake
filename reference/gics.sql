@@ -1,7 +1,7 @@
 /*
 
 Filename: 	gics.sql
-Purpose: 	Create and populate a lookup table with the GICS sector classifications.
+Purpose: 	Create and populate a reference table with the GICS sector classifications.
 Data Source:	https://www.msci.com/our-solutions/indexes/gics
 Notes:		--
 Database: 	Snowflake
@@ -12,19 +12,19 @@ Author: 	Jason Inzer
 create schema if not exists reference;
 
 create or replace table reference.gics (
-	GICS_SECTOR char(2),
+	GICS_SECTOR_CODE char(2),
 	GICS_SECTOR_NAME varchar(40),
-	GICS_INDUSTRY_GROUP char(4),
+	GICS_INDUSTRY_GROUP_CODE char(4),
 	GICS_INDUSTRY_GROUP_NAME varchar(80),
-	GICS_INDUSTRY char(6),
+	GICS_INDUSTRY_CODE char(6),
 	GICS_INDUSTRY_NAME varchar(80),
-	GICS_SUB_INDUSTRY char(8),
+	GICS_SUB_INDUSTRY_CODE char(8),
 	GICS_SUB_INDUSTRY_NAME varchar(80),
 	created_at timestamp_ntz default sysdate()
 );
 
 
-insert into reference.gics(gics_sector,gics_sector_name,gics_industry_group,gics_industry_group_name,gics_industry,gics_industry_name,gics_sub_industry,gics_sub_industry_name)
+insert into reference.gics(gics_sector_code,gics_sector_name,gics_industry_group_code,gics_industry_group_name,gics_industry_code,gics_industry_name,gics_sub_industry_code,gics_sub_industry_name)
 values
 ('10','Energy','1010','Energy','101010','Energy Equipment & Services','10101010','Oil & Gas Drilling'),
 ('10','Energy','1010','Energy','101010','Energy Equipment & Services','10101020','Oil & Gas Equipment & Services'),
