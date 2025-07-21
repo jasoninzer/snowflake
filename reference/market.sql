@@ -20,7 +20,7 @@ create or replace table reference.market (
 	country char(2),
 	city varchar(255),
 	website varchar(255),
-	is_active boolean,
+	is_active BOOLEAN DEFAULT TRUE,                -- Optional: for discontinued codes
 	created_at timestamp_ntz default sysdate()
 );
 
