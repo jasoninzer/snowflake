@@ -20,6 +20,7 @@ create or replace table reference.gics (
 	GICS_INDUSTRY_NAME varchar(80),
 	GICS_SUB_INDUSTRY_CODE char(8),
 	GICS_SUB_INDUSTRY_NAME varchar(80),
+	is_active BOOLEAN DEFAULT TRUE,                -- Optional: for discontinued codes
 	created_at timestamp_ntz default sysdate()
 );
 
