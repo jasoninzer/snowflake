@@ -16,6 +16,7 @@ create table reference.currency (
 	currency_code_numeric number,
 	currency_name varchar(100) not null,
 	currency_minor_unit number,
+	is_active BOOLEAN DEFAULT TRUE,                -- Optional: for discontinued codes
 	created_at timestamp_ntz default sysdate()
 	);
 
